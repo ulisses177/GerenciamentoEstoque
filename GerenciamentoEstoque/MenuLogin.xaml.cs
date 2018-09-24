@@ -16,20 +16,23 @@ using System.Windows.Shapes;
 namespace GerenciamentoEstoque
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LoginMenu.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MenuLogin : Page
     {
-
-        public MainWindow()
+        private readonly MainWindow mainWindow;
+        public MenuLogin(MainWindow window)
         {
             InitializeComponent();
-            MainFrame.NavigationService.Navigate(new MenuLogin(this));
+            mainWindow = window;
         }
 
-        public void Navigate(Page page)
+        private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.NavigationService.Navigate(page);
+            if(Login_TextBox.Text != "")
+                mainWindow.Navigate(new MenuGerente(mainWindow));
+            else
+                mainWindow.Navigate(new MenuVendedor(mainWindow));
         }
     }
 }

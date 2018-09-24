@@ -1,0 +1,22 @@
+﻿<Page x:Class="GerenciamentoEstoque.MenuLogin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GerenciamentoEstoque"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MenuLogin">
+
+    <Grid Background="#FF4A8095">
+        <TextBlock TextAlignment="Center" FontSize="30" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Faça Login Para Continuar" VerticalAlignment="Top" Height="53" Width="474" RenderTransformOrigin="0.5,0.5" Margin="163,28,163,0"/>
+
+            <TextBlock Margin="0,119,0,0" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Login:" VerticalAlignment="Top" Height="20" Width="100" />
+            <TextBlock Margin="0,218,0,0" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Senha" VerticalAlignment="Top" Height="20" Width="100" />
+            <TextBox Margin="350,144,350,0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Login_TextBox" />
+            <TextBox Margin="350,243,350,0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" x:Name="Senha_TextBox" />
+
+        <Button Content="Fazer Login" Margin="0,0,0,50" Width="160" Name="Login_Button" HorizontalAlignment="Center" Height="42" VerticalAlignment="Bottom" Click="Login_Button_Click"/>
+    </Grid>
+</Page>
+
