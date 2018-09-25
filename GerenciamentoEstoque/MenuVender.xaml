@@ -10,15 +10,17 @@
 
     <Grid Background="LightPink">
         <TextBlock TextAlignment="Center" FontSize="30" HorizontalAlignment="Center" Margin="0,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="53" Width="410" RenderTransformOrigin="0.5,0.5"><Run Text="Vender Produtos"/><LineBreak/><Run/></TextBlock>
-        
-        <TextBlock Margin="0,280,200,0" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Produto:" VerticalAlignment="Top" Height="20" Width="100" />
-        <TextBlock Margin="0,320,200,0" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Cliente:" VerticalAlignment="Top" Height="20" Width="100" />
-        <TextBox Margin="0,280,0,0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Produto_TextBox" />
-        <TextBox Margin="0,320,0,0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" x:Name="Cliente_TextBox" />
+
+        <TextBlock Margin="0,270,200,0" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Produto:" VerticalAlignment="Top" Height="20" Width="100" />
+        <TextBlock Margin="0,300,200,0" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Cliente:" VerticalAlignment="Top" Height="20" Width="100" />
+        <TextBlock Margin="0,330,200,0" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Quantidade:" VerticalAlignment="Top" Height="20" Width="100" />
+        <TextBox Margin="0,270,0,0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Produto_TextBox" />
+        <TextBox Margin="0,300,0,0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Cliente_TextBox" />
+        <TextBox Margin="0,330,0,0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Quantidade_TextBox" />
 
         <Button Name="Vender_Button" Content="Vender Produto" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Vender_Button_Click" />
         <Button Content="Voltar" Margin="0,390,0,0" Width="157" x:Name="Voltar_Button" HorizontalAlignment="Center" Height="20" VerticalAlignment="Top" Click="Voltar_Button_Click" />
-        <DataGrid Name="Produto_DataGrid" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="162" VerticalAlignment="Top" Width="554" Margin="0,100,0,0" >
+        <DataGrid Name="Produto_DataGrid" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="554" Margin="123,100,123,0" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="100"/>
                 <DataGridTextColumn Header="Produto" Width="200"/>
