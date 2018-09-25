@@ -16,12 +16,12 @@ using System.Windows.Shapes;
 namespace GerenciamentoEstoque
 {
     /// <summary>
-    /// Interaction logic for MenuCadastro.xaml
+    /// Interaction logic for MenuHistorico.xaml
     /// </summary>
-    public partial class MenuCadastro : Page
+    public partial class MenuHistorico : Page
     {
         private readonly MainWindow mainWindow;
-        public MenuCadastro(MainWindow window)
+        public MenuHistorico(MainWindow window)
         {
             InitializeComponent();
             mainWindow = window;

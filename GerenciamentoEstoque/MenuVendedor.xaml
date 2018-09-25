@@ -10,8 +10,8 @@
 
     <Grid Background="Green">
         <TextBlock TextAlignment="Center" FontSize="30" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Menu de Vendedor" VerticalAlignment="Top" Height="53" Width="474" RenderTransformOrigin="0.5,0.5" Margin="163,46,163,0"/>
-        <Button Content="Consultar Estoque" Margin="320,0,320,273" Width="160" x:Name="Consultar_Button" HorizontalAlignment="Center" Height="42" VerticalAlignment="Bottom" Click="Consultar_Button_Click" />
-        <Button Content="Vender Produtos" Margin="320,0,320,187" Width="160" x:Name="Vender_Button" HorizontalAlignment="Center" Height="42" VerticalAlignment="Bottom" Click="Vender_Button_Click" />
-        <Button Content="Voltar" Margin="320,0,320,92" Width="160" x:Name="Voltar_Button" HorizontalAlignment="Center" Height="42" VerticalAlignment="Bottom" Click="Voltar_Button_Click" />
+        <Button Content="Consultar Estoque" Margin="0,0,0,250" Width="160" x:Name="Consultar_Button" HorizontalAlignment="Center" Height="42" VerticalAlignment="Bottom" Click="Consultar_Button_Click" />
+        <Button Content="Vender Produtos" Margin="0,0,0,200" Width="160" x:Name="Vender_Button" HorizontalAlignment="Center" Height="42" VerticalAlignment="Bottom" Click="Vender_Button_Click" />
+        <Button Content="Logout" Margin="0,0,0,100" Width="160" x:Name="Logout_Button" HorizontalAlignment="Center" Height="42" VerticalAlignment="Bottom" Click="Logout_Button_Click" />
     </Grid>
 </Page>

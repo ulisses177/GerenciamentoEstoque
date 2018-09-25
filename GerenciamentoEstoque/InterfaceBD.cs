@@ -8,6 +8,12 @@ namespace GerenciamentoEstoque
 {
     static class InterfaceBD
     {
+        //TABELAS:
+        //    LOGIN GERENTES/VENDEDORES
+        //    PRODUTOS NO ESTOQUE
+        //    PRODUTOS DO FORNECEDOR
+        //    CLIENTES
+        //    HISTORICO DE COMPRAS
         static InterfaceBD()
         {
 

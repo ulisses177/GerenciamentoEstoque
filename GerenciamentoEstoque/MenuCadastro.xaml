@@ -11,15 +11,17 @@
     <Grid Background="LightYellow">
         <TextBlock TextAlignment="Center" FontSize="30" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Cadastrar Novo Produto" VerticalAlignment="Top" Height="53" Width="600" RenderTransformOrigin="0.5,0.5"/>
 
-        <StackPanel Name="StackPanel1" Orientation="Vertical" Margin="0,0,120,50" Height="150" VerticalAlignment="Center" HorizontalAlignment="Center" Width="130">
+        <StackPanel Name="StackPanel1" Orientation="Vertical" Margin="275,78,395,222" Height="150" VerticalAlignment="Center" HorizontalAlignment="Center" Width="130">
             <TextBlock Margin="0,15,0,0" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Top" Height="20" Width="100" />
             <TextBlock Margin="0,15,0,0" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Nome:" VerticalAlignment="Top" Height="20" Width="100" />
             <TextBlock Margin="0,15,0,0" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Preco:" VerticalAlignment="Top" Height="20" Width="100" />
+            <TextBlock Margin="0,15,0,0" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Quantidade:" VerticalAlignment="Top" Height="20" Width="100" />
         </StackPanel>
-        <StackPanel Name="StackPanel2" Orientation="Vertical" Margin="120,0,0,50" Height="150" VerticalAlignment="Center" HorizontalAlignment="Center" Width="130" >
+        <StackPanel Name="StackPanel2" Orientation="Vertical" Margin="395,78,275,222" Height="150" VerticalAlignment="Center" HorizontalAlignment="Center" Width="130" >
             <TextBox Margin="0,15,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Id_TextBox" />
             <TextBox Margin="0,15,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" x:Name="Nome_TextBox" />
             <TextBox Margin="0,15,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Preco_TextBox"/>
+            <TextBox Margin="0,15,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Quantidade_TextBox"/>
         </StackPanel>
 
         <Button Content="Cadastrar Produto" Margin="0,0,0,128" Width="160" Name="Cadastrar_Button" HorizontalAlignment="Center" Height="42" VerticalAlignment="Bottom"/>

@@ -27,7 +27,7 @@ namespace GerenciamentoEstoque
             mainWindow = window;
         }
 
-        private void Voltar_Button_Click(object sender, RoutedEventArgs e)
+        private void Logout_Button_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.Navigate(new MenuLogin(mainWindow));
         }
@@ -42,5 +42,9 @@ namespace GerenciamentoEstoque
             mainWindow.Navigate(new MenuVender(mainWindow));
         }
 
+        private void NovoCliente_Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.Navigate(new MenuNovoCliente(mainWindow));
+        }
     }
 }

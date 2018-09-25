@@ -20,16 +20,25 @@ namespace GerenciamentoEstoque
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        public bool LoginGerente { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            LoginGerente = false;
             MainFrame.NavigationService.Navigate(new MenuLogin(this));
         }
 
         public void Navigate(Page page)
         {
             MainFrame.NavigationService.Navigate(page);
+        }
+
+        public void NavigateToMenu()
+        {
+            if (LoginGerente)
+                Navigate(new MenuGerente(this));
+            else
+                Navigate(new MenuVendedor(this));
         }
     }
 }

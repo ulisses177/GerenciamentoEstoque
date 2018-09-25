@@ -67,6 +67,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MenuHistorico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MenuLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -94,6 +98,9 @@
     <Compile Include="MenuExcluir.xaml.cs">
       <DependentUpon>MenuExcluir.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MenuHistorico.xaml.cs">
+      <DependentUpon>MenuHistorico.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MenuLogin.xaml.cs">
       <DependentUpon>MenuLogin.xaml</DependentUpon>
     </Compile>
@@ -104,6 +111,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MenuNovoCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MenuRequisitar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -118,6 +129,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuNovoCliente.xaml.cs">
+      <DependentUpon>MenuNovoCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MenuRequisitar.xaml.cs">
       <DependentUpon>MenuRequisitar.xaml</DependentUpon>
     </Compile>

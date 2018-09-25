@@ -29,10 +29,12 @@ namespace GerenciamentoEstoque
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            if(Login_TextBox.Text != "")
-                mainWindow.Navigate(new MenuGerente(mainWindow));
+            if (Login_TextBox.Text != "")
+                mainWindow.LoginGerente = true;
             else
-                mainWindow.Navigate(new MenuVendedor(mainWindow));
+                mainWindow.LoginGerente = false;
+
+            mainWindow.NavigateToMenu();
         }
     }
 }

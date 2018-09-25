@@ -28,8 +28,19 @@ namespace GerenciamentoEstoque
         }
         private void Voltar_Button_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.Navigate(new MenuLogin(mainWindow));
+            mainWindow.NavigateToMenu();
         }
 
+        private void Vender_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(Cliente_TextBox.Text != "")
+            {
+                mainWindow.Navigate(new MenuNovoCliente(mainWindow));
+            }
+            else
+            {
+
+            }
+        }
     }
 }
