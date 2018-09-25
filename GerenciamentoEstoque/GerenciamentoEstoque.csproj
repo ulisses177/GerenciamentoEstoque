@@ -55,6 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="MenuConsulta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuExcluir.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MenuLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -71,6 +79,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MenuConsulta.xaml.cs">
+      <DependentUpon>MenuConsulta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuExcluir.xaml.cs">
+      <DependentUpon>MenuExcluir.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MenuLogin.xaml.cs">
       <DependentUpon>MenuLogin.xaml</DependentUpon>
     </Compile>
@@ -81,14 +95,28 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MenuRequisitar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MenuVendedor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuVender.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuRequisitar.xaml.cs">
+      <DependentUpon>MenuRequisitar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MenuVendedor.xaml.cs">
       <DependentUpon>MenuVendedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuVender.xaml.cs">
+      <DependentUpon>MenuVender.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

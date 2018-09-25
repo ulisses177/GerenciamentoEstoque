@@ -31,5 +31,20 @@ namespace GerenciamentoEstoque
         {
             mainWindow.Navigate(new MenuLogin(mainWindow));
         }
+
+        private void Consultar_Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.Navigate(new MenuConsulta(mainWindow));
+        }
+
+        private void Requisitar_Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.Navigate(new MenuRequisitar(mainWindow));
+        }
+
+        private void Excluir_Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.Navigate(new MenuExcluir(mainWindow));
+        }
     }
 }

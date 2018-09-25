@@ -16,12 +16,12 @@ using System.Windows.Shapes;
 namespace GerenciamentoEstoque
 {
     /// <summary>
-    /// Interaction logic for MenuVendedor.xaml
+    /// Interaction logic for MenuExcluir.xaml
     /// </summary>
-    public partial class MenuVendedor : Page
+    public partial class MenuExcluir : Page
     {
         private readonly MainWindow mainWindow;
-        public MenuVendedor(MainWindow window)
+        public MenuExcluir(MainWindow window)
         {
             InitializeComponent();
             mainWindow = window;
@@ -30,16 +30,6 @@ namespace GerenciamentoEstoque
         private void Voltar_Button_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.Navigate(new MenuLogin(mainWindow));
-        }
-
-        private void Consultar_Button_Click(object sender, RoutedEventArgs e)
-        {
-            mainWindow.Navigate(new MenuConsulta(mainWindow));
-        }
-
-        private void Vender_Button_Click(object sender, RoutedEventArgs e)
-        {
-            mainWindow.Navigate(new MenuVender(mainWindow));
         }
 
     }
