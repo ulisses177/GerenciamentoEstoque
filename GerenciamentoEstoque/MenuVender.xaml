@@ -16,8 +16,8 @@
         <TextBox Margin="0,280,0,0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Produto_TextBox" />
         <TextBox Margin="0,320,0,0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" x:Name="Cliente_TextBox" />
 
-        <Button Name="Vender_Button" Content="Vender Produto" HorizontalAlignment="Center" Margin="0,0,0,70" VerticalAlignment="Bottom" Width="120" Height="20" Click="Vender_Button_Click" />
-        <Button Content="Voltar" Margin="0,0,0,41" Width="157" x:Name="Voltar_Button" HorizontalAlignment="Center" Height="20" VerticalAlignment="Bottom" Click="Voltar_Button_Click" />
+        <Button Name="Vender_Button" Content="Vender Produto" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Vender_Button_Click" />
+        <Button Content="Voltar" Margin="0,390,0,0" Width="157" x:Name="Voltar_Button" HorizontalAlignment="Center" Height="20" VerticalAlignment="Top" Click="Voltar_Button_Click" />
         <DataGrid Name="Produto_DataGrid" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="162" VerticalAlignment="Top" Width="554" Margin="0,100,0,0" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="100"/>
