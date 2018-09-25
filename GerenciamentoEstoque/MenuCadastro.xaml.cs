@@ -16,24 +16,20 @@ using System.Windows.Shapes;
 namespace GerenciamentoEstoque
 {
     /// <summary>
-    /// Interaction logic for MenuRequisitar.xaml
+    /// Interaction logic for MenuCadastro.xaml
     /// </summary>
-    public partial class MenuRequisitar : Page
+    public partial class MenuCadastro : Page
     {
         private readonly MainWindow mainWindow;
-        public MenuRequisitar(MainWindow window)
+        public MenuCadastro(MainWindow window)
         {
             InitializeComponent();
             mainWindow = window;
         }
+
         private void Voltar_Button_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.Navigate(new MenuLogin(mainWindow));
-        }
-
-        private void Requisitar_Button_Click(object sender, RoutedEventArgs e)
-        {
-            mainWindow.Navigate(new MenuCadastro(mainWindow));
         }
     }
 }

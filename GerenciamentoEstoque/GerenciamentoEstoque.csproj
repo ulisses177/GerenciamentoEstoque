@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="MenuCadastro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MenuConsulta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -78,6 +82,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Funcionario.cs" />
+    <Compile Include="InterfaceBD.cs" />
+    <Compile Include="MenuCadastro.xaml.cs">
+      <DependentUpon>MenuCadastro.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuConsulta.xaml.cs">
       <DependentUpon>MenuConsulta.xaml</DependentUpon>
@@ -118,6 +127,7 @@
     <Compile Include="MenuVender.xaml.cs">
       <DependentUpon>MenuVender.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

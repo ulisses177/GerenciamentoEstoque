@@ -20,7 +20,7 @@ namespace GerenciamentoEstoque
     /// </summary>
     public partial class MenuGerente : Page
     {
-        MainWindow mainWindow { get; set; }
+        private readonly MainWindow mainWindow;
         public MenuGerente(MainWindow window)
         {
             InitializeComponent();
