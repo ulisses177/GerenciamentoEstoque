@@ -1,0 +1,151 @@
+Cliente,Cliente da loja,,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+Nome,Nome completo,100,Alfanumérico,{X}100,Contínuo
+RG,Registro Geral do cliente,10,Alfanumérico,{X}10,Contínuo
+CPF,"Certifica de Pessoa 
+Física do Cliente",15,Numérico,{X}15,Contínuo
+Telefone,Telefone do cliente,15,Numérico,{14}15,Contínuo
+,,,,,
+Funcionário,Funcionário da loja,,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+Nome,Nome do funcionário,100,Alfanumérico,{X}100,Contínuo
+Login,Login único do funcionário,50,Alfanumérico,{X}50,Contínuo
+Senha,Senha do funcionário,50,Alfanumérico,{x}50,Contínuo
+Cargo,Cargo do funcionário,20,Alfanumérico,{x}20,"Discreto
+Vendedor
+Gerente"
+,,,,,
+InterfaceBd,"Interface para interagir 
+Com o bd",,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+ConectionString,Texto de conecção ao BD,200,Alfanumérico,{X}200,Contínuo
+TabelaAtual,Nome da Tabela atual,200,Alfanumérico,{x}200,Contínuo
+,,,,,
+MainWindow,,,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+LoginGenerate,Checa se o login foi feito,1,Boleano,A,Discreto 
+,,,,,
+MenuCadastro,,,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+Produto,Nome geral do produto,200,Alfanumérico,{x}200,Contínuo
+,,,,,
+MenuConsulta,"Menu para realizar 
+A consulta",,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+Idproduto,Id Específico do produto,6,Numérico,AAAAAA,Contínuo
+Nomeproduto,Nome geral do produto,200,Alfanumérico,{x}200,Contínuo
+,,,,,
+MenuExcluir,"Menu para excluir um 
+Produto pelo Gerente",,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+Idproduto,Id Específico do produto,6,Numérico,AAAAAA,Contínuo
+Nomeproduto,Nome geral do produto,200,Alfanumérico,{x}200,Contínuo
+,,,,,
+MenuGerente,Menu acessado pelo gerente,,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+,,,,,
+,,,,,
+MenuHistorico,"Menu para visualizar o 
+histórico De comprasDe um 
+Cliente",,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+Transacoes,array do tipo transacao,"size of 
+Transacao",Transacao,"Cliente
+IdProduto","Contínuo
+Cliente 
+Produto"
+,,,,,
+MenuLogin,Menu de login de funcionário,,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+Funcionario,Funcionario a fazer login,"Size of
+Funcionario",Funcionario,"Nome
+Login
+Senha
+Cargo","Contínuo
+Nome
+Login
+Senha
+Cargo"
+,,,,,
+MenuNovoCliente,Menu para adicionar Clientes,,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+Cliente,Cliente a ser armazenado,"Size of 
+Cliente",Cliente,"Nome
+Rg
+CPF
+Telefone","Contínuo
+Nome
+Rg
+CPF
+Telefone"
+,,,,,
+MenuRequisitar,Requisita de um fornecedor,,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+Produto,Produto a ser requisitado,"Size of
+Produto",Produto,"Nome
+ID
+Preco
+Qtde","Contínuo
+Nome
+ID
+Preco
+Qtde"
+,,,,,
+MenuVendedor,,,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+,,,,,
+MenuVender,"Menu para vender produtos
+ Registrar a venda",,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+Produto,Produto a ser requisitado,"Size of
+Produto",Produto,"Nome
+ID
+Preco
+Qtde","Contínuo
+Nome
+ID
+Preco
+Qtde"
+Cliente,Cliente a ser armazenado,"Size of 
+Cliente",Cliente,"Nome
+Rg
+CPF
+Telefone","Contínuo
+Nome
+Rg
+CPF
+Telefone"
+,,,,,
+Page,"Pagina para criação 
+De menus",,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+,,,,,
+Produto,Produto da loja,,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+Nome,Nome geral do produto,200,Alfanumérico,{x}200,Contínuo
+Idproduto,Id Específico do produto,6,Numérico,AAAAAA,Contínuo
+Preco,Preço do produto,15,Numérico,{x}15,Contínuo
+Qtde,"Quantidade no estoque
+ do produto",15,Numérico,{x}15,Contínuo
+,,,,,
+Transacao,"Informação para armazenar
+ clientes e produto",,,,
+Atributo,Descrição,Tamanho,Tipo,Formato,Domínio
+Cliente,Cliente a ser armazenado,"Size of 
+Cliente",Cliente,"Nome
+Rg
+CPF
+Telefone","Contínuo
+Nome
+Rg
+CPF
+Telefone"
+Produto,Produto a ser requisitado,"Size of
+Produto",Produto,"Nome
+ID
+Preco
+Qtde","Contínuo
+Nome
+ID
+Preco
+Qtde"
