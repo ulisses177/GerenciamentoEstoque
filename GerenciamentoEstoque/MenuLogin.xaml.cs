@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace GerenciamentoEstoque
 {
@@ -29,12 +30,38 @@ namespace GerenciamentoEstoque
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Login_TextBox.Text != "")
-                mainWindow.LoginGerente = true;
-            else
-                mainWindow.LoginGerente = false;
+            SqlDataReader dataReader = InterfaceBD.getDatareader("SELECT * FROM Login");
+            bool founduser = false;
+            bool found = false;
+            while (dataReader.Read())
+            {
+                string user = Convert.ToString(dataReader["User"]);
+                user = user.Replace(" ", String.Empty);
+                if (Login_TextBox.Text == user)
+                {
+                    founduser = true;
+                    string password = Convert.ToString(dataReader["Password"]);
+                    password = password.Replace(" ", string.Empty);
 
-            mainWindow.NavigateToMenu();
+                    if (Senha_TextBox.Password == password)
+                    {
+                        found = true;
+                        mainWindow.LoginGerente = Convert.ToBoolean(dataReader["IsAdmin"]);
+                        mainWindow.NavigateToMenu();
+                    }
+                }
+            }
+
+            if (!founduser)
+            {
+                MessageBox.Show("Usuario nao encontrado");
+            }
+            if (founduser && !found)
+            {
+                MessageBox.Show("Senha invalida");
+            }
+
+            dataReader.Close();
         }
     }
 }

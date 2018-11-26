@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace GerenciamentoEstoque
 {
@@ -14,9 +16,29 @@ namespace GerenciamentoEstoque
         //    PRODUTOS DO FORNECEDOR
         //    CLIENTES
         //    HISTORICO DE COMPRAS
+        static public SqlConnection SQLconnection { get; set; }
+        static public void inicializar()
+        {
+            SQLconnection = new SqlConnection(Properties.Settings.Default.Connection_String);
+            try
+            {
+                SQLconnection.Open();
+            }
+            catch (SqlException ex)
+            {
+                string erro = ex.Message;
+                System.Windows.Application.Current.Shutdown();
+            }
+        }
         static InterfaceBD()
         {
 
+        }
+        static public SqlDataReader getDatareader(string Command)
+        {
+            SqlCommand command = new SqlCommand(Command, InterfaceBD.SQLconnection);
+            SqlDataReader dataReader = command.ExecuteReader();
+            return dataReader;
         }
         static public bool conectar()
         {

@@ -14,10 +14,10 @@
         <TextBlock Margin="0,100,0,0" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Login:" VerticalAlignment="Top" Height="20" Width="100" />
         <TextBox Margin="0,120,0,0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Login_TextBox" />
         <TextBlock Margin="0,180,0,0" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Senha" VerticalAlignment="Top" Height="20" Width="100" />
-        <TextBox Margin="0,200,0,0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" x:Name="Senha_TextBox" />
+        <PasswordBox Margin="0,200,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="20" Width="100" x:Name="Senha_TextBox" />
 
         <Button Content="Fazer Login" Margin="0,0,0,70" Width="160" Name="Login_Button" HorizontalAlignment="Center" Height="42" VerticalAlignment="Bottom" Click="Login_Button_Click"/>
-        <TextBlock TextAlignment="Center" FontSize="15" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="24" Width="309" Margin="0,0,0,129"><Run Text="Confere se o usuario esta no banco de dados"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBlock TextAlignment="Center" FontSize="15" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="77" Width="308" Margin="246,0,246,117"><Run Text="Para teste: "/><LineBreak/><Run Text="gerente = admin, admin"/><LineBreak/><Run Text="vendedor = user, user"/></TextBlock>
     </Grid>
 </Page>
 

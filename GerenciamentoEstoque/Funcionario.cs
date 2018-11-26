@@ -10,6 +10,13 @@ namespace GerenciamentoEstoque
     {
         public string Nome { get; set; }
         public string Senha { get; set; }
-        public string Cargo { get; set; }
+        public bool EGerente { get; set; }
+        public Funcionario(string nome, string senha, bool egerente)
+        {
+            Nome = nome;
+            Senha = senha;
+            EGerente = egerente;
+        }
+        ~Funcionario() { }
     }
 }

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace GerenciamentoEstoque
 {
@@ -24,6 +26,7 @@ namespace GerenciamentoEstoque
         public MainWindow()
         {
             InitializeComponent();
+            InterfaceBD.inicializar();
             LoginGerente = false;
             MainFrame.NavigationService.Navigate(new MenuLogin(this));
         }
