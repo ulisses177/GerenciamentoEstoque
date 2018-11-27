@@ -34,11 +34,22 @@ namespace GerenciamentoEstoque
         {
 
         }
-        static public SqlDataReader getDatareader(string Command)
+        static public SqlDataReader GetDatareader(string Command)
         {
-            SqlCommand command = new SqlCommand(Command, InterfaceBD.SQLconnection);
+            SqlCommand command = new SqlCommand(Command, SQLconnection);
             SqlDataReader dataReader = command.ExecuteReader();
             return dataReader;
+        }
+        static public SqlDataAdapter GetDataAdapter(string Command)
+        {
+            SqlCommand command = new SqlCommand(Command, SQLconnection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            return dataAdapter;
+        }
+        static public void SqlRunCommand(string Command)
+        {
+            SqlCommand command = new SqlCommand(Command, SQLconnection);
+            command.ExecuteNonQuery();
         }
         static public bool conectar()
         {

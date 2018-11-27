@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace GerenciamentoEstoque
 {
@@ -25,6 +27,10 @@ namespace GerenciamentoEstoque
         {
             InitializeComponent();
             mainWindow = window;
+                DataTable dataTable = new DataTable("Estoque");
+                SqlDataAdapter dataAdapter = InterfaceBD.GetDataAdapter("SELECT * FROM Estoque");
+                dataAdapter.Fill(dataTable);
+                Produto_DataGrid.ItemsSource = dataTable.DefaultView;
         }
         private void Voltar_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -33,14 +39,28 @@ namespace GerenciamentoEstoque
 
         private void Vender_Button_Click(object sender, RoutedEventArgs e)
         {
-            if(Cliente_TextBox.Text != "")
+            SqlDataReader dataReader = InterfaceBD.GetDatareader("SELECT * FROM Cliente");
+            bool found = false;
+            while (dataReader.Read())
             {
-                mainWindow.Navigate(new MenuNovoCliente(mainWindow));
+                string cliente = Convert.ToString(dataReader["Nome"]).Trim();
+                if (Cliente_TextBox.Text == cliente)
+                {
+                    found = true;
+                }
             }
-            else
-            {
 
+            if (!found)
+            {
+                MessageBox.Show("Cliente nao cadastrado");
             }
+
+            dataReader.Close();
+        }
+
+        private void Novo_Cliente_Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.Navigate(new MenuNovoCliente(mainWindow));
         }
     }
 }

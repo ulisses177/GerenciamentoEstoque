@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace GerenciamentoEstoque
 {
@@ -30,6 +32,22 @@ namespace GerenciamentoEstoque
         private void Voltar_Button_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.NavigateToMenu();
+        }
+
+        private void ProcurarID_Button_Click(object sender, RoutedEventArgs e)
+        {
+            DataTable dataTable = new DataTable("Estoque");
+            SqlDataAdapter dataAdapter = InterfaceBD.GetDataAdapter($"SELECT * FROM Estoque WHERE Id LIKE '%{Id_TextBox.Text}%'");
+            dataAdapter.Fill(dataTable);
+            Produto_DataGrid.ItemsSource = dataTable.DefaultView;
+        }
+
+        private void ProcurarNome_Button_Click(object sender, RoutedEventArgs e)
+        {
+            DataTable dataTable = new DataTable("Estoque");
+            SqlDataAdapter dataAdapter = InterfaceBD.GetDataAdapter($"SELECT * FROM Estoque WHERE Nome LIKE '%{Name_TextBox.Text}%'");
+            dataAdapter.Fill(dataTable);
+            Produto_DataGrid.ItemsSource = dataTable.DefaultView;
         }
     }
 }

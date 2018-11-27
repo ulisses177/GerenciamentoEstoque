@@ -8,8 +8,9 @@ namespace GerenciamentoEstoque
 {
     class Produto
     {
-        public String Nome { get; set; }
-        public int Id { get; set; }
-        public double preco { get; set; }
+        private String Nome { get; set; }
+        private int Id { get; set; }
+        private double preco { get; set; }
+        private int quantidade { get; set; }
     }
 }

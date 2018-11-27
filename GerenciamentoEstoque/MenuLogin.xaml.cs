@@ -30,18 +30,18 @@ namespace GerenciamentoEstoque
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlDataReader dataReader = InterfaceBD.getDatareader("SELECT * FROM Login");
+            SqlDataReader dataReader = InterfaceBD.GetDatareader("SELECT * FROM Login");
             bool founduser = false;
             bool found = false;
             while (dataReader.Read())
             {
                 string user = Convert.ToString(dataReader["User"]);
-                user = user.Replace(" ", String.Empty);
+                user = user.Trim();
                 if (Login_TextBox.Text == user)
                 {
                     founduser = true;
                     string password = Convert.ToString(dataReader["Password"]);
-                    password = password.Replace(" ", string.Empty);
+                    password = password.Trim();
 
                     if (Senha_TextBox.Password == password)
                     {

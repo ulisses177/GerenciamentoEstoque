@@ -21,10 +21,10 @@
             <TextBox Margin="0,15,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Nome_TextBox" />
             <TextBox Margin="0,15,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="RG_TextBox" />
             <TextBox Margin="0,15,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="CPF_TextBox"/>
-            <TextBox Margin="0,15,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Tefelone_TextBox"/>
+            <TextBox Margin="0,15,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Telefone_TextBox"/>
         </StackPanel>
 
-        <Button Content="Cadastrar Novo Cliente" Margin="320,0,320,78" Width="160" Name="Cadastrar_Button" HorizontalAlignment="Center" Height="42" VerticalAlignment="Bottom"/>
+        <Button Content="Cadastrar Novo Cliente" Margin="320,0,320,78" Width="160" Name="Cadastrar_Button" HorizontalAlignment="Center" Height="42" VerticalAlignment="Bottom" Click="Cadastrar_Button_Click"/>
         <Button Content="Voltar" Margin="321.5,0,321.5,41" Width="157" x:Name="Voltar_Button" HorizontalAlignment="Center" Height="20" VerticalAlignment="Bottom" Click="Voltar_Button_Click" />
     </Grid>
 </Page>

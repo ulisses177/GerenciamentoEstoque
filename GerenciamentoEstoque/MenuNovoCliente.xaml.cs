@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace GerenciamentoEstoque
 {
@@ -30,6 +32,37 @@ namespace GerenciamentoEstoque
         private void Voltar_Button_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.NavigateToMenu();
+        }
+
+        private void Cadastrar_Button_Click(object sender, RoutedEventArgs e)
+        {
+            string nome = Nome_TextBox.Text;
+            string RG = RG_TextBox.Text;
+            string CPF = CPF_TextBox.Text;
+            string Telefone = Telefone_TextBox.Text;
+
+            if (nome == "")
+            {
+                MessageBox.Show("campo nome invalido");
+            }
+            else if (RG == "")
+            {
+                MessageBox.Show("campo RG invalido");
+            }
+            else if (CPF == "")
+            {
+                MessageBox.Show("campo CPF invalido");
+            }
+            else if (Telefone == "")
+            {
+                MessageBox.Show("campo telefone invalido");
+            }
+            else
+            {
+                InterfaceBD.SqlRunCommand($"INSERT INTO Cliente (Nome, RG, CPF, Telefone) VALUES ('{nome}','{RG}','{CPF}','{Telefone}')");
+                MessageBox.Show($"Cliente \"{nome}\" cadastrado");
+                mainWindow.Navigate(new MenuVender(mainWindow));
+            }
         }
     }
 }
