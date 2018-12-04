@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace GerenciamentoEstoque
 {
@@ -25,6 +27,11 @@ namespace GerenciamentoEstoque
         {
             InitializeComponent();
             mainWindow = window;
+            DataTable dataTable = new DataTable("Estoque");
+            SqlDataAdapter dataAdapter = InterfaceBD.GetDataAdapter($"SELECT * FROM Historico");
+            dataAdapter.Fill(dataTable);
+            Produto_DataGrid.ItemsSource = dataTable.DefaultView;
+
         }
 
         private void Voltar_Button_Click(object sender, RoutedEventArgs e)

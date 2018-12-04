@@ -11,12 +11,12 @@
     <Grid Background="Tan">
         <TextBlock TextAlignment="Center" FontSize="30" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Historico de Compras" VerticalAlignment="Top" Height="53" Width="300" RenderTransformOrigin="0.5,0.5"/>
         <Button Content="Voltar" Margin="0,0,0,36" Width="157" x:Name="Voltar_Button" HorizontalAlignment="Center" Height="20" VerticalAlignment="Bottom" Click="Voltar_Button_Click" />
-        <DataGrid Name="Produto_DataGrid" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="256" VerticalAlignment="Bottom" Width="554" Margin="123,0,123,95" >
+        <DataGrid Name="Produto_DataGrid" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="256" VerticalAlignment="Bottom" Width="554" Margin="0,0,0,95" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Produto" Width="100"/>
-                <DataGridTextColumn Header="Cliente" Width="100"/>
-                <DataGridTextColumn Header="Quantidade" Width="200"/>
-                <DataGridTextColumn Header="Total Gasto" Width="200"/>
+                <DataGridTextColumn Binding="{Binding Produto}" Header="Produto" Width="200" />
+                <DataGridTextColumn Binding="{Binding CPF_Cliente}" Header="Cliente" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Quantidade}" Header="Quantidade" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Preco}" Header="Preco_unitario" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
 

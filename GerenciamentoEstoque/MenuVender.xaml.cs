@@ -43,11 +43,12 @@ namespace GerenciamentoEstoque
 
         private void Vender_Button_Click(object sender, RoutedEventArgs e)
         {
+            string cliente = "";
             SqlDataReader dataReader = InterfaceBD.GetDatareader("SELECT * FROM Clientes");
             bool found = false;
             while (dataReader.Read())
             {
-                string cliente = Convert.ToString(dataReader["Nome"]).Trim();
+                cliente = Convert.ToString(dataReader["CPF"]).Trim();
                 if (Cliente_TextBox.Text == cliente)
                 {
                     found = true;
@@ -55,7 +56,6 @@ namespace GerenciamentoEstoque
             }
 
             dataReader.Close();
-            InterfaceBD.SqlRunCommand("")
             if (!found)
             {
                 MessageBox.Show("Cliente nao cadastrado");
@@ -64,11 +64,19 @@ namespace GerenciamentoEstoque
             {
                 if (Quantidade_TextBox.Text != "" && Convert.ToInt32(Quantidade_TextBox.Text) != 0)
                 {
-                    bool sucess = Convert.ToBoolean(InterfaceBD.SqlRunCommand($"UPDATE Estoque SET Quantidade=(Quantidade-{Convert.ToInt32(Quantidade_TextBox.Text)}) WHERE Nome='{Produto_TextBox.Text}'"));
-                    if (sucess)
+                    int sucess = InterfaceBD.SqlRunCommand($"UPDATE Estoque SET Quantidade=(Quantidade-{Convert.ToInt32(Quantidade_TextBox.Text)}) WHERE Nome='{Produto_TextBox.Text}'");
+                    if (sucess > 0)
                     {
                         MessageBox.Show("Venda concluida com sucesso");
                         update_table();
+                        dataReader = InterfaceBD.GetDatareader($"SELECT * FROM Estoque WHERE Nome='{Produto_TextBox.Text}'");
+                        dataReader.Read();
+                        int Id = Convert.ToInt32(dataReader["Id"]);
+                        string Nome = Convert.ToString(dataReader["Nome"]);
+                        double Preco = Convert.ToDouble(dataReader["Preco"]);
+                        dataReader.Close();
+
+                        InterfaceBD.SqlRunCommand($"INSERT INTO Historico (Id, Produto, Quantidade, Preco, CPF_Cliente) VALUES ('{Id}','{Nome}','{Quantidade_TextBox.Text}','{Preco}','{cliente}')");
                     }
                     else
                     {
