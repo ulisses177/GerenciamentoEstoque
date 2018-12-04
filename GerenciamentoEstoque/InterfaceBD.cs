@@ -46,10 +46,10 @@ namespace GerenciamentoEstoque
             SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
             return dataAdapter;
         }
-        static public void SqlRunCommand(string Command)
+        static public int SqlRunCommand(string Command)
         {
             SqlCommand command = new SqlCommand(Command, SQLconnection);
-            command.ExecuteNonQuery();
+            return command.ExecuteNonQuery();
         }
         static public bool conectar()
         {

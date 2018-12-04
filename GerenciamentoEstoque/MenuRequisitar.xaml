@@ -10,15 +10,24 @@
 
     <Grid Background="BlueViolet">
         <TextBlock TextAlignment="Center" FontSize="30" HorizontalAlignment="Center" Margin="0,24,0,0" TextWrapping="Wrap" Text="Requisição de Produtos" VerticalAlignment="Top" Height="53" Width="410" RenderTransformOrigin="0.5,0.5"/>
-        <TextBlock Margin="0,0,200,110" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Produto:" VerticalAlignment="Bottom" Height="20" Width="100" />
-        <TextBox HorizontalAlignment="Center" Margin="0,0,0,110" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="20" Width="100" Name="Id_TextBox" />
-        <Button Name="Requisitar_Button" Content="Requisitar Produto" HorizontalAlignment="Center" Margin="0,0,0,70" VerticalAlignment="Bottom" Width="120" Height="20" Click="Requisitar_Button_Click" />
+        <TextBlock Margin="0,0,300,70" TextAlignment="Left" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Produto e quantidade:" VerticalAlignment="Bottom" Height="20" Width="120" />
+        <TextBox Name="Produto_TextBox" Margin="0,0,50,70" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="20" Width="100" />
+        <TextBox Name="Quantidade_TextBox" Margin="100,0,0,70" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="20" Width="20" />
+        <Button Name="Requisitar_Button" Content="Requisitar Produto" HorizontalAlignment="Center" Margin="250,0,0,70" VerticalAlignment="Bottom" Width="120" Height="20" Click="Requisitar_Button_Click" />
         <Button Content="Voltar" Margin="0,0,0,41" Width="157" x:Name="Voltar_Button" HorizontalAlignment="Center" Height="20" VerticalAlignment="Bottom" Click="Voltar_Button_Click" />
-        <DataGrid Name="Produto_DataGrid" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="162" VerticalAlignment="Top" Width="554" Margin="0,100,0,0" >
+
+        
+        <TextBlock TextAlignment="Right" HorizontalAlignment="Left" Margin="200,82,0,0" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Top" Height="20" Width="79" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox HorizontalAlignment="Left" Margin="300,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Id_TextBox" />
+        <Button Name="ProcurarID_Button" Content="Procurar por ID" HorizontalAlignment="Left" Margin="420,82,0,0" VerticalAlignment="Top" Width="120" Height="21" Click="ProcurarID_Button_Click" />
+        <TextBlock TextAlignment="Right" HorizontalAlignment="Left" Margin="200,130,0,0" TextWrapping="Wrap" Text="Produto:" VerticalAlignment="Top" Height="20" Width="79" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox HorizontalAlignment="Left" Margin="300,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Name_TextBox" />
+        <Button Name="ProcurarNome_Button" Content="Procurar por Nome" HorizontalAlignment="Left" Margin="420,130,0,0" VerticalAlignment="Top" Width="120" Height="21" Click="ProcurarNome_Button_Click" />
+        <DataGrid Name="Produto_DataGrid" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="162" VerticalAlignment="Bottom" Width="554" Margin="0,0,0,95" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="100"/>
-                <DataGridTextColumn Header="Produto" Width="200"/>
-                <DataGridTextColumn Header="Preço" Width="200"/>
+                <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Nome}" Header="Produto" Width="200"/>
+                <DataGridTextColumn Binding="{Binding Preco}" Header="Preço" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
 

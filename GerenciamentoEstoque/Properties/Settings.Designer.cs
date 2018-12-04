@@ -25,8 +25,8 @@ namespace GerenciamentoEstoque.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database.mdf;" +
-            "Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\vitor\\source\\repos\\G" +
+            "erenciamentoEstoque\\GerenciamentoEstoque\\Database.mdf;Integrated Security=True")]
         public string Connection_String {
             get {
                 return ((string)(this["Connection_String"]));

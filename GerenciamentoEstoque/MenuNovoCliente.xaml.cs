@@ -31,7 +31,7 @@ namespace GerenciamentoEstoque
 
         private void Voltar_Button_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.NavigateToMenu();
+            mainWindow.Navigate(new MenuVender(mainWindow));
         }
 
         private void Cadastrar_Button_Click(object sender, RoutedEventArgs e)
@@ -59,7 +59,7 @@ namespace GerenciamentoEstoque
             }
             else
             {
-                InterfaceBD.SqlRunCommand($"INSERT INTO Cliente (Nome, RG, CPF, Telefone) VALUES ('{nome}','{RG}','{CPF}','{Telefone}')");
+                InterfaceBD.SqlRunCommand($"INSERT INTO Clientes (Nome, RG, CPF, Telefone) VALUES ('{nome}','{RG}','{CPF}','{Telefone}')");
                 MessageBox.Show($"Cliente \"{nome}\" cadastrado");
                 mainWindow.Navigate(new MenuVender(mainWindow));
             }

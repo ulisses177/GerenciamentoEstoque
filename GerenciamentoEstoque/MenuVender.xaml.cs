@@ -27,10 +27,14 @@ namespace GerenciamentoEstoque
         {
             InitializeComponent();
             mainWindow = window;
-                DataTable dataTable = new DataTable("Estoque");
-                SqlDataAdapter dataAdapter = InterfaceBD.GetDataAdapter("SELECT * FROM Estoque");
-                dataAdapter.Fill(dataTable);
-                Produto_DataGrid.ItemsSource = dataTable.DefaultView;
+            update_table();
+        }
+        private void update_table()
+        {
+            DataTable dataTable = new DataTable("Estoque");
+            SqlDataAdapter dataAdapter = InterfaceBD.GetDataAdapter("SELECT * FROM Estoque");
+            dataAdapter.Fill(dataTable);
+            Produto_DataGrid.ItemsSource = dataTable.DefaultView;
         }
         private void Voltar_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -39,7 +43,7 @@ namespace GerenciamentoEstoque
 
         private void Vender_Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlDataReader dataReader = InterfaceBD.GetDatareader("SELECT * FROM Cliente");
+            SqlDataReader dataReader = InterfaceBD.GetDatareader("SELECT * FROM Clientes");
             bool found = false;
             while (dataReader.Read())
             {
@@ -50,12 +54,32 @@ namespace GerenciamentoEstoque
                 }
             }
 
+            dataReader.Close();
+            InterfaceBD.SqlRunCommand("")
             if (!found)
             {
                 MessageBox.Show("Cliente nao cadastrado");
             }
-
-            dataReader.Close();
+            else
+            {
+                if (Quantidade_TextBox.Text != "" && Convert.ToInt32(Quantidade_TextBox.Text) != 0)
+                {
+                    bool sucess = Convert.ToBoolean(InterfaceBD.SqlRunCommand($"UPDATE Estoque SET Quantidade=(Quantidade-{Convert.ToInt32(Quantidade_TextBox.Text)}) WHERE Nome='{Produto_TextBox.Text}'"));
+                    if (sucess)
+                    {
+                        MessageBox.Show("Venda concluida com sucesso");
+                        update_table();
+                    }
+                    else
+                    {
+                        MessageBox.Show("produto nao encontrado");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("quantidade invalida");
+                }
+            }
         }
 
         private void Novo_Cliente_Button_Click(object sender, RoutedEventArgs e)

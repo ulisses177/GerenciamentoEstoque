@@ -9,16 +9,21 @@
       Title="MenuExcluir">
 
     <Grid Background="Gray">
+        <TextBlock TextAlignment="Right" HorizontalAlignment="Left" Margin="200,80,0,0" TextWrapping="Wrap" Text="Produto:" VerticalAlignment="Top" Height="20" Width="79" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox HorizontalAlignment="Left" Margin="300,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="100" Name="Name_TextBox" />
+        <Button Name="ProcurarNome_Button" Content="Procurar por Nome" HorizontalAlignment="Left" Margin="420,80,0,0" VerticalAlignment="Top" Width="120" Height="21" Click="ProcurarNome_Button_Click" />
+
         <TextBlock TextAlignment="Center" FontSize="30" HorizontalAlignment="Center" Margin="0,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="53" Width="410" Text="Excluir Produtos"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,0,150,110" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="20" Width="100" Name="Id_TextBox" />
-        <Button Name="Filtrar_Button" Content="Filtrar" HorizontalAlignment="Center" Margin="150,0,0,110" VerticalAlignment="Bottom" Width="120" Height="22" />
-        <Button Name="Excluir_Button" Content="Excluir Produto" HorizontalAlignment="Center" Margin="0,0,0,70" VerticalAlignment="Bottom" Width="120" Height="20" />
+        <TextBlock Margin="0,0,220,70" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Produto:" VerticalAlignment="Bottom" Height="20" Width="100" />
+        <TextBox Margin="0,0,0,70" TextAlignment="Right" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="20" Width="100" Name="Produto_TextBox"/>
+        <Button Name="Excluir_Button" Content="Excluir Produto" HorizontalAlignment="Center" Margin="250,0,0,70" VerticalAlignment="Bottom" Width="120" Height="20" Click="Excluir_Button_Click" />
         <Button Content="Voltar" Margin="0,0,0,40" Width="157" x:Name="Voltar_Button" HorizontalAlignment="Center" Height="20" VerticalAlignment="Bottom" Click="Voltar_Button_Click" />
-        <DataGrid Name="Produto_DataGrid" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="162" VerticalAlignment="Top" Width="554" Margin="0,100,0,0" >
+        <DataGrid Name="Produto_DataGrid" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="162" VerticalAlignment="Top" Width="554" Margin="0,120,0,0" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="100"/>
-                <DataGridTextColumn Header="Produto" Width="200"/>
-                <DataGridTextColumn Header="Preço" Width="200"/>
+                <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Nome}" Header="Produto" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Preco}" Header="Preço" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Quantidade}" Header="Quantidade" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
 

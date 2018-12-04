@@ -31,5 +31,11 @@ namespace GerenciamentoEstoque
         {
             mainWindow.NavigateToMenu();
         }
+
+        private void Cadastrar_Button_Click(object sender, RoutedEventArgs e)
+        {
+            InterfaceBD.SqlRunCommand($"INSERT INTO Estoque (Id, Nome, Preco, Quantidade) VALUES ('{Id_TextBox.Text}','{Nome_TextBox.Text}','{Preco_TextBox.Text}','{Quantidade_TextBox.Text}')");
+            MessageBox.Show($"Produto \"{Nome_TextBox.Text}\" cadastrado");
+        }
     }
 }
